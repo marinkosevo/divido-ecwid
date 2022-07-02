@@ -1,0 +1,386 @@
+
+/*** POPUP ***/
+#divido_overlay{
+  display: none;
+  z-index: 10000 !important;
+  box-sizing: border-box !important;
+  line-height: 1.44;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif;
+  font-size: 13px  !important;
+  color: rgb(33, 43, 54);
+  text-rendering: optimizelegibility;
+  position: fixed !important;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  transform: translate3d(0px, 0px, 1px) !important;
+  height: 100%;
+}
+#divido_popup {
+    position: fixed !important;
+    z-index: 10001 !important;
+    right: 0;
+    left: 0;
+    max-width: 500px !important;
+    margin: 32px auto !important;
+    padding: 24px !important;
+    box-shadow: rgba(33, 43, 54, 0.08) 0px 2px 16px 0px !important;
+    background-color: white !important;
+  }
+  #divido_call{
+    line-height: 1.44;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif;
+    font-size: 13px;
+    color: rgb(33, 43, 54);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  #divido_widget{
+  
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white !important;
+    box-sizing: border-box !important;
+    line-height: 1.44;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif;
+    font-size: 13px !important;
+    color: rgb(33, 43, 54);
+    text-rendering: optimizelegibility;
+  }
+  #divido_widget h4{
+    box-sizing: border-box !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    margin-top: 8px !important;
+    margin-bottom: 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+  #divido_finance_options{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 16px !important;
+    border-style: solid solid none !important;
+    border-width: 1px 1px medium !important;
+    border-image: none 100% / 1 / 0 stretch !important;
+    background-color: white !important;
+    border-color: rgb(223, 227, 232) rgb(223, 227, 232) currentcolor !important;
+    border-radius: 2px;
+    padding: 0px !important;
+  }
+  .divido_finance_option_single{
+    font-weight: 500;
+    border-bottom: 1px solid rgb(223, 227, 232) !important;
+    -moz-box-align: center;
+    align-items: center;
+    padding: 12px 16px !important;
+    min-height: 24px !important;
+    display: flex;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s !important;
+  }
+  .divido_finance_option_single:hover{
+    background-color: rgb(249, 250, 251) !important;
+  }
+  #divido_select_deposit{
+    box-sizing: border-box !important;
+    margin-bottom: 16px !important;
+    padding: 12px 16px !important;
+    border: 1px solid rgb(223, 227, 232) !important;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  #divido_widget table{
+    width: 100%  !important;
+    padding: 16px !important;
+    border: 1px solid rgb(223, 227, 232)  !important;
+    border-radius: 2px;
+  }
+  #divido_widget table tr {
+    display: flex !important;
+    justify-content: space-between !important;
+    font-size: 13px !important;
+    font-weight: 500;
+    color: #637381;
+    padding: 4px 16px !important;
+    background-color: white !important;
+  }
+  
+  #divido_widget table td {
+    background-color: white;
+    padding: 0;
+  }
+  
+  /*Radio buttons*/
+  [type="radio"]:checked,
+  [type="radio"]:not(:checked) {
+      position: absolute !important;
+      left: -9999px;
+  }
+  [type="radio"]:checked + label,
+  [type="radio"]:not(:checked) + label
+  {
+      position: relative !important;
+      padding-left: 28px !important;
+      cursor: pointer !important;
+      line-height: 20px !important;
+      display: inline-block !important;
+  }
+  [type="radio"]:checked + label:before,
+  [type="radio"]:not(:checked) + label:before {
+      content: '' !important;
+      position: absolute !important;
+      left: 0;
+      top: 0;
+      width: 18px !important;
+      height: 18px !important;
+      border: 1px solid #ddd !important;
+      border-radius: 100%;
+      background: #fff !important;
+  }
+  [type="radio"]:checked + label:after,
+  [type="radio"]:not(:checked) + label:after {
+      content: '' !important;
+      width: 12px;
+      height: 12px;
+      background: #1975F8 !important;
+      position: absolute !important;
+      top: 4px;
+      left: 4px;
+      border-radius: 100% !important;
+      -webkit-transition: all 0.2s ease !important;
+      transition: all 0.2s ease !important;
+  }
+  [type="radio"]:not(:checked) + label:after {
+      opacity: 0 !important;
+      -webkit-transform: scale(0) !important;
+      transform: scale(0) !important;
+  }
+  [type="radio"]:checked + label:after {
+      opacity: 1 !important;
+      -webkit-transform: scale(1) !important;
+      transform: scale(1) !important;
+  }
+  #divido_widget button{
+    margin-top: 24px !important;
+    color: rgb(255, 255, 255);
+    text-rendering: optimizelegibility;
+    appearance: none !important;
+    display: inline-flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(25, 117, 248) !important;
+    position: relative;
+    border: medium none;
+    padding: 0px 16px !important;
+    border-radius: 2px;
+    flex-shrink: 0 !important;
+    outline: currentcolor none medium;
+    transition: background-color 0.15s ease 0s, color 0.15s ease 0s, border 0.15s ease 0s !important;
+    height: 36px;
+    width: 100% !important;
+    font-weight: 500;
+  }
+  #divido_widget button:hover {
+    background-color: rgb(7, 99, 230) !important;
+  }
+  /*End Radio Buttons */
+  
+  /*Slider*/
+  input[type=range].divido_slider {
+    height: 2.2em !important;
+    -webkit-appearance: none !important;
+    width: 100% !important;
+  }
+  
+  /*progress support*/
+  input[type=range].divido_slider.slider-progress {
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--value) - var(--min)) / var(--range));
+    --sx: calc(0.5 * 2em + var(--ratio) * (100% - 2em));
+  }
+  
+  input[type=range].divido_slider:focus {
+    outline: none !important;
+  }
+  
+  /*webkit*/
+  input[type=range].divido_slider::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 2em !important;
+    height: 2em !important;
+    border-radius: 1em !important;
+    background: #007cf8 !important;
+    border: none !important;
+    box-shadow: 0 0 2px black !important;
+    margin-top: calc(max((1em - 1px - 1px) * 0.5,0px) - 2em * 0.5);
+  }
+  
+  input[type=range].divido_slider::-webkit-slider-runnable-track {
+    height: 1em !important;
+    border: 1px solid #b2b2b2 !important;
+    border-radius: 0.5em !important;
+    background: #efefef !important;
+    box-shadow: none !important;
+  }
+  
+  input[type=range].divido_slider::-webkit-slider-thumb:hover {
+    background: #0061c3 !important;
+  }
+  
+  input[type=range].divido_slider:hover::-webkit-slider-runnable-track {
+    background: #e5e5e5 !important;
+    border-color: #9a9a9a !important;
+  }
+  
+  input[type=range].divido_slider::-webkit-slider-thumb:active {
+    background: #2f98f9 !important;
+  }
+  
+  input[type=range].divido_slider:active::-webkit-slider-runnable-track {
+    background: #f5f5f5 !important;
+    border-color: #c1c1c1 !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress::-webkit-slider-runnable-track {
+    background: linear-gradient(#007cf8,#007cf8) 0/var(--sx) 100% no-repeat, #efefef !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress:hover::-webkit-slider-runnable-track {
+    background: linear-gradient(#0061c3,#0061c3) 0/var(--sx) 100% no-repeat, #e5e5e5 !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress:active::-webkit-slider-runnable-track {
+    background: linear-gradient(#2f98f9,#2f98f9) 0/var(--sx) 100% no-repeat, #f5f5f5 !important;
+  }
+  
+  /*mozilla*/
+  input[type=range].divido_slider::-moz-range-thumb {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    border-radius: 1.5em !important;
+    background: #007cf8 !important;
+    border: none !important;
+    box-shadow: 0 0 2px black !important;
+  }
+  
+  input[type=range].divido_slider::-moz-range-track {
+    height: 1em !important;
+    border: 1px solid #b2b2b2 !important;
+    border-radius: 0.5em !important;
+    background: #efefef !important;
+    box-shadow: none !important;
+  }
+  
+  input[type=range].divido_slider::-moz-range-thumb:hover {
+    background: #0061c3 !important;
+  }
+  
+  input[type=range].divido_slider:hover::-moz-range-track {
+    background: #e5e5e5 !important;
+    border-color: #9a9a9a !important;
+  }
+  
+  input[type=range].divido_slider::-moz-range-thumb:active {
+    background: #2f98f9 !important;
+  }
+  
+  input[type=range].divido_slider:active::-moz-range-track {
+    background: #f5f5f5 !important;
+    border-color: #c1c1c1 !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress::-moz-range-track {
+    background: linear-gradient(#007cf8,#007cf8) 0/var(--sx) 100% no-repeat, #efefef !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress:hover::-moz-range-track {
+    background: linear-gradient(#0061c3,#0061c3) 0/var(--sx) 100% no-repeat, #e5e5e5 !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress:active::-moz-range-track {
+    background: linear-gradient(#2f98f9,#2f98f9) 0/var(--sx) 100% no-repeat, #f5f5f5 !important;
+  }
+  
+  /*ms*/
+  input[type=range].divido_slider::-ms-fill-upper {
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+  
+  input[type=range].divido_slider::-ms-fill-lower {
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+  
+  input[type=range].divido_slider::-ms-thumb {
+    width: 2em !important;
+    height: 2em !important;
+    border-radius: 1em !important;
+    background: #007cf8 !important;
+    border: none !important;
+    box-shadow: 0 0 2px black !important;
+    margin-top: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  input[type=range].divido_slider::-ms-track {
+    height: 1em !important;
+    border-radius: 0.5em !important;
+    background: #efefef !important;
+    border: 1px solid #b2b2b2 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+  
+  input[type=range].divido_slider::-ms-thumb:hover {
+    background: #0061c3 !important;
+  }
+  
+  input[type=range].divido_slider:hover::-ms-track {
+    background: #e5e5e5 !important;
+    border-color: #9a9a9a !important;
+  }
+  
+  input[type=range].divido_slider::-ms-thumb:active {
+    background: #2f98f9 !important;
+  }
+  
+  input[type=range].divido_slider:active::-ms-track {
+    background: #f5f5f5 !important;
+    border-color: #c1c1c1 !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress::-ms-fill-lower {
+    border-radius: 0.5em 0 0 0.5em !important;
+    margin: -1px 0 -1px -1px !important;
+    background: #007cf8 !important;
+    border: 1px solid #b2b2b2 !important;
+    border-right-width: 0 !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress:hover::-ms-fill-lower {
+    background: #0061c3 !important;
+    border-color: #9a9a9a !important;
+  }
+  
+  input[type=range].divido_slider.slider-progress:active::-ms-fill-lower {
+    background: #2f98f9 !important;
+    border-color: #c1c1c1 !important;
+  }
+  
+  /*End Slider*/
+  @media screen and (max-width: 600px) {
+    #divido_popup{
+      max-width: 85% !important;
+    }
+  }
